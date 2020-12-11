@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "deliverysystem-8": {
+      "hosting": {
+        "app": [
+          "deliverysystem-8"
+        ]
+      }
+    }
+  }
+}
