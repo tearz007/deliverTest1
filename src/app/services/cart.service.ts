@@ -15,7 +15,10 @@ export class CartService {
   }
 
   setCart(id){
-
+   this.cart.push(id)
+  }
+  getCart(){
+    return this.cart
   }
   
 }

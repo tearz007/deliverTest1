@@ -16,12 +16,14 @@ export class MenuPage implements OnInit {
   };
 
   images=[]
-
-  constructor(private cartService: CartService, private router: Router) { }
+   cartLength
+  constructor(private cartService: CartService, private router: Router) { 
+    this.cartLength=this.cartService.cart.length
+  }
 
   ngOnInit() {
-
-    
+  this.cartLength=this.cartService.cart.length
+  
     this.cartService.getImages().subscribe(data=>{
       this.images=[]
       data.forEach(a => {
@@ -34,10 +36,13 @@ export class MenuPage implements OnInit {
    
   }
 
-setCart(id){
-this.cartService.setCart(id)
-}
- 
+ setCart(id){
+   this.cartService.setCart(id)
+   this.cartLength=this.cartService.cart.length
+  }
+  goCart(){
+    this.router.navigate(['cart'])
+  }
 
 }
 

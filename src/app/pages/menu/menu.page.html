@@ -1,12 +1,12 @@
 <ion-header>
     <ion-toolbar>
+        
         <ion-title>menu</ion-title>
 
         <ion-buttons slot="end">
             <ion-button (click)="goCart()">
-
                 <ion-icon size="large" slot="" name="cart"></ion-icon>
-                <ion-badge>{{ 0 }}</ion-badge>
+                <ion-badge>{{ cartLength }}</ion-badge>
             </ion-button>
         </ion-buttons>
 
@@ -15,17 +15,7 @@
 
 
 <ion-content>
-    <!-- 
-    <ion-slides [options]="slideOps">
-    <ion-slide *ngFor="let items of images">
-        <ion-card > 
-            <img [src]='items.image'>
-                <ion-button size="small" color="medium" (click)="add(product)">Add to cart</ion-button>       
-        </ion-card>
-    </ion-slide> 
-     
-</ion-slides>
--->
+
 
     <div class="collection ion-padding" *ngFor="let items of images">
 
@@ -33,7 +23,7 @@
             <ion-card>
                 <img [src]='items.image'>
                 <ion-title>R {{items.price}}</ion-title>
-                <ion-button size="small" color="medium" (click)="add(product)">Add to cart</ion-button>
+                <ion-button size="small" color="medium" (click)="setCart(items.id)">Add to cart</ion-button>
             </ion-card>
         </div>
 
